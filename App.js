@@ -1,13 +1,14 @@
 import React from "react";
 import { StatusBar, SafeAreaView, Text, View, StyleSheet } from "react-native";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
+import { Searchbar } from "react-native-paper";
 
 export default function App() {
   return (
     <>
       <SafeAreaView style={styles.appContainer}>
         <View style={styles.searchArea}>
-          <Text>Search Bar</Text>
+          <Searchbar />
         </View>
         <View style={styles.screenArea}>
           <Text>Restaurants List</Text>
