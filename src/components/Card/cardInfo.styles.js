@@ -18,6 +18,7 @@ export const CardDetails = styled(View)`
 export const CardTitle = styled(Text)`
   padding: 16px;
   color: #264653;
+  font-family: Lato_400Regular;
   font-size: 18px;
   font-weight: 700;
 `;
