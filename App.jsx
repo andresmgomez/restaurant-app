@@ -1,18 +1,15 @@
 import React from "react";
-import { StatusBar, SafeAreaView, Text, View, Platform } from "react-native";
+import { StatusBar, SafeAreaView, Text, View, StyleSheet } from "react-native";
 import { StatusBar as ExpoStatusBar } from "expo-status-bar";
-
-// Get height of android device only
-console.log(StatusBar.currentHeight);
 
 export default function App() {
 	return (
 		<>
-			<SafeAreaView style={{ flex: 1, marginTop: StatusBar.currentHeight }}>
-				<View style={{ padding: 16, backgroundColor: "lightblue" }}>
-					<Text>Search Area</Text>
+			<SafeAreaView style={styles.appContainer}>
+				<View style={styles.searchArea}>
+					<Text>Search Bar</Text>
 				</View>
-				<View style={{ flex: 1, padding: 16, backgroundColor: "lightyellow" }}>
+				<View style={styles.screenArea}>
 					<Text>Restaurants List</Text>
 				</View>
 			</SafeAreaView>
@@ -20,3 +17,19 @@ export default function App() {
 		</>
 	);
 }
+
+const styles = StyleSheet.create({
+	appContainer: {
+		flex: 1,
+		marginTop: StatusBar.currentHeight,
+	},
+	searchArea: {
+		padding: 16,
+		backgroundColor: "lightblue",
+	},
+	screenArea: {
+		flex: 1,
+		padding: 16,
+		backgroundColor: "lightyellow",
+	},
+});
