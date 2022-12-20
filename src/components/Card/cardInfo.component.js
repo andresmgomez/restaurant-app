@@ -1,6 +1,11 @@
 import React from "react";
 
-import { CardImage, CardWrapper, CardTitle } from "./cardInfo.styles";
+import {
+  CardImage,
+  CardWrapper,
+  CardTitle,
+  CardDetails,
+} from "./cardInfo.styles";
 
 export default function CardComponent({ restaurant = {} }) {
   const {
@@ -13,7 +18,9 @@ export default function CardComponent({ restaurant = {} }) {
   return (
     <CardWrapper elevation={5}>
       <CardImage key={name} source={{ uri: photos[0] }} />
-      <CardTitle>{name}</CardTitle>
+      <CardDetails>
+        <CardTitle>{name}</CardTitle>
+      </CardDetails>
     </CardWrapper>
   );
 }
