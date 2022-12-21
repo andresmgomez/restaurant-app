@@ -11,13 +11,13 @@ export const CardImage = styled(Card.Cover)`
   padding: 0;
 `;
 
-export const CardRow = styled(View)`
-  display: flex;
+export const CardRating = styled(View)`
   flex-direction: row;
   padding: ${(props) => props.theme.spaces[0]};
 `;
 
 export const CardDetails = styled(View)`
+  display: flex;
   padding: ${(props) => props.theme.spaces[2]};
 `;
 
@@ -26,4 +26,15 @@ export const CardTitle = styled(Text)`
   font-family: ${(props) => props.theme.fonts.main.heading};
   font-size: ${(props) => props.theme.fonts.sizes.title};
   font-weight: ${(props) => props.theme.fonts.weights.bold};
+`;
+
+export const CardRow = styled(View)`
+  flex-direction: row;
+  align-items: flex-start;
+`;
+
+export const CardEnd = styled(View)`
+  flex: 1;
+  flex-direction: row;
+  justify-content: flex-end;
 `;
