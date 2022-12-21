@@ -11,6 +11,12 @@ export const CardImage = styled(Card.Cover)`
   padding: 0;
 `;
 
+export const CardRow = styled(View)`
+  display: flex;
+  flex-direction: row;
+  padding: ${(props) => props.theme.spaces[0]};
+`;
+
 export const CardDetails = styled(View)`
   padding: ${(props) => props.theme.spaces[2]};
 `;
