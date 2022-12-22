@@ -1,4 +1,5 @@
 import React from "react";
+import { Text } from "react-native";
 
 import { SvgXml } from "react-native-svg";
 import {
@@ -7,8 +8,10 @@ import {
   CardTitle,
   CardDetails,
   CardRow,
-  CardRating,
+  CardSpacer,
   CardEnd,
+  CardBadge,
+  CardText,
 } from "./cardInfo.styles";
 
 import starIcon from "../../../assets/svg/starIcon.js";
@@ -21,6 +24,8 @@ export default function CardComponent({ restaurant = {} }) {
       "https://lh5.googleusercontent.com/p/AF1QipNRDzu8Hb5kmN1suj0wpe03WqfLs1wIcXg9G3aT=w666-h240-k-no",
     ],
     rating = 4.4,
+    tags = ["restaurant", "greek", "mediterranean"],
+    openHours = "8:00 AM - 9:00 PM",
     inService = true,
   } = restaurant;
   // Generate a list of stars from an array
@@ -30,17 +35,26 @@ export default function CardComponent({ restaurant = {} }) {
     <CardWrapper elevation={5}>
       <CardImage key={name} source={{ uri: photos[0] }} />
       <CardDetails>
-        <CardTitle>{name}</CardTitle>
+        <CardTitle variant="titleLarge">{name}</CardTitle>
         <CardRow>
-          <CardRating>
+          <CardSpacer>
             {starsList.map(() => {
               return <SvgXml width={25} height={25} xml={starIcon} />;
             })}
-          </CardRating>
+          </CardSpacer>
           <CardEnd>
             {inService && <SvgXml width={28} height={28} xml={openSignIcon} />}
           </CardEnd>
         </CardRow>
+        <CardSpacer>
+          <CardBadge>{tags[0]}</CardBadge>
+          <CardBadge>{tags[1]}</CardBadge>
+          <CardBadge>{tags[2]}</CardBadge>
+        </CardSpacer>
+        <CardSpacer>
+          <Text style={{ paddingTop: 4, color: "green" }}>Open hours:</Text>
+          <CardText variant="labelSmall">{openHours}</CardText>
+        </CardSpacer>
       </CardDetails>
     </CardWrapper>
   );

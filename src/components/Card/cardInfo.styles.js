@@ -1,7 +1,7 @@
 import styled from "styled-components/native";
 
-import { View, Text } from "react-native";
-import { Card } from "react-native-paper";
+import { View } from "react-native";
+import { Badge, Card, Text } from "react-native-paper";
 
 export const CardWrapper = styled(Card)`
   background-color: ${(props) => props.theme.colors.background.primary};
@@ -11,7 +11,7 @@ export const CardImage = styled(Card.Cover)`
   padding: 0;
 `;
 
-export const CardRating = styled(View)`
+export const CardSpacer = styled(View)`
   flex-direction: row;
   padding: ${(props) => props.theme.spaces[0]};
 `;
@@ -26,6 +26,25 @@ export const CardTitle = styled(Text)`
   font-family: ${(props) => props.theme.fonts.main.heading};
   font-size: ${(props) => props.theme.fonts.sizes.title};
   font-weight: ${(props) => props.theme.fonts.weights.bold};
+`;
+
+export const CardBadge = styled(Badge)`
+  min-width: 90px;
+  height: 30px;
+  padding-top: 5px;
+  margin-left: 5px;
+  text-align: center;
+  background-color: lightgrey;
+  font-size: 12px;
+  font-weight: bold;
+`;
+
+export const CardText = styled(Text)`
+  font-family: Lato_400Regular;
+  color: #355335;
+  letter-spacing: 1.5px;
+  padding-top: 5px;
+  margin-left: 15px;
 `;
 
 export const CardRow = styled(View)`
