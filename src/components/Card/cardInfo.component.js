@@ -1,17 +1,16 @@
 import React from "react";
-import { Text } from "react-native";
 
 import { SvgXml } from "react-native-svg";
 import {
   CardImage,
   CardWrapper,
   CardTitle,
-  CardDetails,
   CardRow,
   CardSpacer,
   CardEnd,
   CardBadge,
   CardText,
+  CardHeadline,
 } from "./cardInfo.styles";
 
 import starIcon from "../../../assets/svg/starIcon.js";
@@ -34,28 +33,28 @@ export default function CardComponent({ restaurant = {} }) {
   return (
     <CardWrapper elevation={5}>
       <CardImage key={name} source={{ uri: photos[0] }} />
-      <CardDetails>
+      <CardSpacer>
         <CardTitle variant="titleLarge">{name}</CardTitle>
-        <CardRow>
-          <CardSpacer>
-            {starsList.map(() => {
-              return <SvgXml width={25} height={25} xml={starIcon} />;
-            })}
-          </CardSpacer>
-          <CardEnd>
-            {inService && <SvgXml width={28} height={28} xml={openSignIcon} />}
-          </CardEnd>
-        </CardRow>
+      </CardSpacer>
+      <CardRow>
         <CardSpacer>
-          <CardBadge>{tags[0]}</CardBadge>
-          <CardBadge>{tags[1]}</CardBadge>
-          <CardBadge>{tags[2]}</CardBadge>
+          {starsList.map(() => {
+            return <SvgXml width={25} height={25} xml={starIcon} />;
+          })}
         </CardSpacer>
-        <CardSpacer>
-          <Text style={{ paddingTop: 4, color: "green" }}>Open hours:</Text>
-          <CardText variant="labelSmall">{openHours}</CardText>
-        </CardSpacer>
-      </CardDetails>
+        <CardEnd>
+          {inService && <SvgXml width={28} height={28} xml={openSignIcon} />}
+        </CardEnd>
+      </CardRow>
+      <CardSpacer>
+        <CardBadge>{tags[0]}</CardBadge>
+        <CardBadge>{tags[1]}</CardBadge>
+        <CardBadge>{tags[2]}</CardBadge>
+      </CardSpacer>
+      <CardSpacer>
+        <CardHeadline>Open hours:</CardHeadline>
+        <CardText variant="labelSmall">{openHours}</CardText>
+      </CardSpacer>
     </CardWrapper>
   );
 }
