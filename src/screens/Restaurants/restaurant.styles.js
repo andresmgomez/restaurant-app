@@ -8,7 +8,7 @@ export const SearchArea = styled(View)`
 `;
 
 export const ScrollArea = styled(View)`
-  flex: 1;
-  padding: ${(props) => props.theme.spaces[1]};
-  background-color: ${(props) => props.theme.colors.brand.primary};
+	flex: 1;
+	padding: ${props => props.theme.spaces[2]};
+	background-color: ${props => props.theme.colors.brand.primary};
 `;

@@ -4,38 +4,40 @@ import { View } from "react-native";
 import { Badge, Card, Text } from "react-native-paper";
 
 export const CardWrapper = styled(Card)`
-  display: flex;
-  padding-bottom: ${(props) => props.theme.cards.padding[3]};
-  background-color: ${(props) => props.theme.colors.background.primary};
+	display: flex;
+	margin-bottom: ${props => props.theme.cards.padding[3]};
+	background-color: ${props => props.theme.colors.background.primary};
 `;
 
 export const CardImage = styled(Card.Cover)`
-  padding: 0;
+	padding: 0;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
 `;
 
 export const CardSpacer = styled(View)`
-  flex-direction: row;
-  padding-left: ${(props) => props.theme.spaces[1]};
-  padding-top: ${(props) => props.theme.spaces[1]};
+	flex-direction: row;
+	padding: ${props => props.theme.cards.padding[2]};
 `;
 
 export const CardRow = styled(View)`
-  flex-direction: row;
-  align-items: flex-start;
+	flex-direction: row;
+	align-items: flex-start;
 `;
 
 export const CardEnd = styled(View)`
-  flex: 1;
-  flex-direction: row;
-  justify-content: flex-end;
-  padding-right: ${(props) => props.theme.cards.padding[4]};
+	flex: 1;
+	flex-direction: row;
+	justify-content: flex-end;
+	padding-right: ${props => props.theme.cards.padding[4]};
 `;
 
 export const CardTitle = styled(Text)`
-  color: ${(props) => props.theme.colors.ui.primary};
-  font-family: ${(props) => props.theme.fonts.main.heading};
-  font-size: ${(props) => props.theme.fonts.sizes.title};
-  font-weight: ${(props) => props.theme.fonts.weights.bold};
+	padding-left: ${props => props.theme.cards.padding[1]};
+	color: ${props => props.theme.colors.ui.primary};
+	font-family: ${props => props.theme.fonts.main.heading};
+	font-size: ${props => props.theme.fonts.sizes.title};
+	font-weight: ${props => props.theme.fonts.weights.bold};
 `;
 
 export const CardBadge = styled(Badge)`
